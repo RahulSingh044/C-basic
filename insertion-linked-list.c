@@ -115,7 +115,7 @@ struct node*returnnode(int key){
         }
         cur=cur->next;
     }
-    return node;
+    return NULL;
 }
 
 //Printing the Linked list

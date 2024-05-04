@@ -5,6 +5,7 @@ struct node{
 };
 
 struct node* head=NULL;
+//Insertion of Node at the HEAD of linked List
 void insertatbeginning(int data){
   struct node*ptr=(struct node*)malloc(sizeof(struct node));
   ptr->val=data;
@@ -17,6 +18,7 @@ void insertatbeginning(int data){
   head=ptr;
 }
 
+//Insertion of Node at the End of the linked list
 void insertionatend(int data){
   struct node*curr=head;
   struct node*ptr=(struct node*)malloc (sizeof(struct node));
@@ -35,6 +37,8 @@ void insertionatend(int data){
   }
   curr->next=ptr;
 }
+
+//Insertion after any Node in the linked list
 void insertafternode(struct node*pnode,int data){
     struct node*ptr=(struct node*)malloc(sizeof(struct node));
     ptr->val=data;
@@ -46,6 +50,8 @@ void insertafternode(struct node*pnode,int data){
     ptr->next=pnode->next;
     pnode->next=ptr;
 }
+
+//Insertion before any Node in the linked list
 void insertbeforenode(struct node*pnode,int data){
     struct node*ptr=(struct node*)malloc(sizeof(struct node));
     ptr->val=data;
@@ -66,6 +72,8 @@ void insertbeforenode(struct node*pnode,int data){
     ptr->next=cur->next;
     cur->next=ptr;
 }
+
+//Insertion of Node at any particular position in the linked list
 void insertatposition(int pos,int data){
     struct node*ptr=(struct node*)malloc(sizeof(struct node));
     ptr->val=data;
@@ -84,6 +92,8 @@ void insertatposition(int pos,int data){
     ptr->next=curr->next;
     curr->next=ptr;
 }
+
+//Search for a specific Node in the linked list
 void searchnode(int key){
     struct node*cur=head;
     while(cur!=NULL){
@@ -95,6 +105,8 @@ void searchnode(int key){
     }
     printf("data not found");
 }
+
+//return the value of a specific Node of the Linked list
 struct node*returnnode(int key){
     struct node*cur=head;
     while(cur!=NULL){
@@ -103,8 +115,10 @@ struct node*returnnode(int key){
         }
         cur=cur->next;
     }
-    return NULL;
+    return node;
 }
+
+//Printing the Linked list
 void printlist(){
     struct node*cur=head;
     while(cur!=NULL){
@@ -113,6 +127,7 @@ void printlist(){
     }
 }
 
+//Driver code
 int main(){
     insertatbeginning(3);
     insertionatend(7);

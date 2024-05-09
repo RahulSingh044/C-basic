@@ -21,6 +21,10 @@ void printingList(struct Node *head)
 struct Node *insetionAtBeg(struct Node *Head, int val)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
+    if (ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        return head;
+    }
     ptr->prev = NULL;
     ptr->data = val;
     ptr->next = Head;
@@ -31,8 +35,12 @@ struct Node *insetionAtBeg(struct Node *Head, int val)
 struct Node *insetionAtEnd(struct Node *Head, int val)
 {
     struct Node *ptr = (struct Node *)malloc(sizeof(struct Node));
-    struct Node *p = Head;
+    if (ptr == NULL) {
+        printf("Memory allocation failed.\n");
+        return head;
+    }
     ptr->data = val;
+    struct Node *p = Head;
     while (p->next != NULL)
     {
         p = p->next;
